@@ -20,7 +20,7 @@ This skill turns FlowBoost into a shareable, public-friendly package.
 
 ## Good public description
 
-FlowBoost is a terminal output optimizer that reduces noise from long logs by compressing repeated lines, merging similar output, extracting error context, and shortening large outputs while keeping the useful signal.
+FlowBoost is a terminal output optimizer that reduces noise from long logs by compressing repeated lines, merging similar output, extracting error context, and shortening large outputs while keeping the useful signal. It is designed to be shared as a small, public-friendly skill package.
 
 ## Typical use cases
 
