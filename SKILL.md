@@ -1,6 +1,6 @@
 ---
 name: flowboost-share-packager
-version: 1.1.0
+version: 1.2.0
 description: 生成 FlowBoost 的可分享技能包，清理内部文件并输出适合发布的 SKILL.md/ZIP 结构。
 author: HeartFlow
 homepage: https://github.com/yun520-1/flowboost-share-packager
@@ -29,6 +29,7 @@ metadata:
 - 用户要把 FlowBoost 打包成 skill / ZIP
 - 用户希望把插件改写成更标准的公开技能
 - 需要移除内部实现、缓存、日志、私有文件后再发布
+- 需要把私有插件说明改成公开发布文案
 
 ## When NOT to Use
 
@@ -40,15 +41,16 @@ metadata:
 
 - 识别哪些文件应该保留，哪些文件应该删除
 - 把 FlowBoost 重新组织成公开可分享的 skill 结构
-- 生成适合发布的 `SKILL.md`、`references/`、`scripts/`
+- 生成适合发布的 `SKILL.md`、`README.md`、`references/`、`scripts/`
 - 在打包前检查文件数、体积和敏感内容
 - 帮助把内部插件语言改写成更通用的公开技能语言
+- 将“功能说明”重写为“用户可理解的技能介绍”
 
 ## Quick Start
 
 1. 找到 FlowBoost 的真实源目录
 2. 提取对外可见的技能说明
-3. 保留最小发布集：`SKILL.md`、必要的 `references/`、必要脚本
+3. 保留最小发布集：`SKILL.md`、`README.md`、必要的 `references/`、必要脚本
 4. 删除内部文件、缓存、日志、测试工件
 5. 重新打包并检查文件数与大小
 
@@ -58,9 +60,9 @@ metadata:
 
 优先保留：
 - `SKILL.md`
+- `README.md`
 - 少量必要的 `scripts/`
 - 少量必要的 `references/`
-- 发布所需的 README（若平台允许）
 
 ### 2. 删除什么
 
@@ -76,6 +78,7 @@ metadata:
 
 技能包应遵循渐进式披露：
 - 顶层 `SKILL.md` 说明用途和启动方式
+- `README.md` 用于公开展示
 - 复杂细节放入 `references/`
 - 具体流程放入 `scripts/` 或 `workflows/`
 
@@ -114,6 +117,7 @@ metadata:
 - 是否包含 `SKILL.md`
 - 是否混入私有文件或缓存
 - 是否删除了调试产物
+- 是否仍然带有内部口吻或私有术语
 
 ## 安全提示
 

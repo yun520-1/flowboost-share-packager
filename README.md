@@ -9,21 +9,14 @@ This skill turns FlowBoost into a shareable, public-friendly package.
 - removes logs, caches, private notes, and other internal material
 - validates the final package before publishing
 
-## Skills of this skill
+## Skill capabilities
 
 - package FlowBoost as a compact skill bundle
 - extract public-facing capability wording
 - recommend what to keep and what to delete
 - generate a publishable ZIP structure
 - check file count, archive size, and sensitive content
-
-## Output format
-
-A good share package usually includes:
-- `SKILL.md`
-- `README.md`
-- `references/`
-- `scripts/`
+- convert private implementation details into user-facing language
 
 ## Good public description
 
@@ -36,14 +29,22 @@ FlowBoost is a terminal output optimizer that reduces noise from long logs by co
 - debug sessions with redundant messages
 - release packaging for sharing with others
 
-## Safety
+## What to keep in the share package
 
-Never include:
-- API keys
-- private configuration
-- chat history
-- raw internal memory
-- temporary logs or cache files
+- `SKILL.md`
+- `README.md`
+- `references/`
+- `scripts/`
+
+## What to remove before sharing
+
+- `.git/`
+- `__pycache__/`
+- `.pyc`
+- logs and caches
+- private config files
+- chat logs and personal notes
+- API keys and secrets
 
 ## Packaging checklist
 
@@ -51,3 +52,8 @@ Never include:
 - [ ] internal files are removed
 - [ ] package stays within platform limits
 - [ ] the description reads like a public skill, not a private note
+- [ ] sensitive values are not included anywhere
+
+## Tone guidance
+
+Write the published skill like a small product: clear purpose, clear abilities, clear output. Avoid making it sound like a dev notebook or an internal migration note.
