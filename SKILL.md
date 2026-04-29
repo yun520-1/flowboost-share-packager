@@ -1,9 +1,9 @@
 ---
 name: flowboost-share-packager
-version: 1.0.0
+version: 1.1.0
 description: 生成 FlowBoost 的可分享技能包，清理内部文件并输出适合发布的 SKILL.md/ZIP 结构。
 author: HeartFlow
-homepage: https://github.com/yun520-1/mark-heartflow-skill
+homepage: https://github.com/yun520-1/flowboost-share-packager
 tags:
   - flowboost
   - skill-packaging
@@ -21,12 +21,12 @@ metadata:
 
 # FlowBoost 分享打包器
 
-将 FlowBoost 插件整理为**可分享的 skill 包**。目标不是保留完整开发仓库，而是生成一个适合上传、转发和复用的最小可用技能包。
+将 FlowBoost 插件整理为**可分享的 skill 包**。这个技能不是为了保留完整开发仓库，而是为了把 FlowBoost 变成一个**别人拿到就能理解、能安装、能复用**的最小可用技能包。
 
 ## When to Use
 
 - 用户要把 FlowBoost 分享给别人
-- 用户要把 FlowBoost 打包成 skill/ZIP
+- 用户要把 FlowBoost 打包成 skill / ZIP
 - 用户希望把插件改写成更标准的公开技能
 - 需要移除内部实现、缓存、日志、私有文件后再发布
 
@@ -35,6 +35,14 @@ metadata:
 - 只是本地继续开发 FlowBoost
 - 需要保留完整仓库历史或调试信息
 - 用户只想做一次性的临时压缩
+
+## Skill Capabilities
+
+- 识别哪些文件应该保留，哪些文件应该删除
+- 把 FlowBoost 重新组织成公开可分享的 skill 结构
+- 生成适合发布的 `SKILL.md`、`references/`、`scripts/`
+- 在打包前检查文件数、体积和敏感内容
+- 帮助把内部插件语言改写成更通用的公开技能语言
 
 ## Quick Start
 
@@ -90,6 +98,13 @@ metadata:
 - 命令行输出爆炸
 - 需要节省 token 和阅读成本
 
+## 交付内容
+
+如果用户要分享给别人，优先输出两份内容：
+
+1. **可读版 SKILL.md**：用于展示和复用
+2. **可上传 ZIP**：用于技能市场或直接分发
+
 ## 打包检查
 
 发布前至少检查：
@@ -99,13 +114,6 @@ metadata:
 - 是否包含 `SKILL.md`
 - 是否混入私有文件或缓存
 - 是否删除了调试产物
-
-## 交付建议
-
-如果用户要分享给别人，优先输出两份内容：
-
-1. **可读版 SKILL.md**：用于展示和复用
-2. **可上传 ZIP**：用于技能市场或直接分发
 
 ## 安全提示
 
